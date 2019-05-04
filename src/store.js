@@ -6,7 +6,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   strict: true,
   state: {
-    darkTheme: JSON.parse(localStorage.getItem('isDarkTheme!'))
+    darkTheme: JSON.parse(localStorage.getItem('isDarkTheme'))
   },
   getters: {
     isDarkTheme: state => state.darkTheme
@@ -14,7 +14,7 @@ export default new Vuex.Store({
   mutations: {
     SET_DARK_THEME (state, payload) {
       state.darkTheme = payload
-      localStorage.setItem('isDarkTheme!', JSON.stringify(state.darkTheme))
+      localStorage.setItem('isDarkTheme', JSON.stringify(state.darkTheme))
     }
   },
   actions: {
