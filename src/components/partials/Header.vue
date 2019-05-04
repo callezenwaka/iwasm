@@ -372,7 +372,7 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  background-color: #801515;
+  /* background-color: #801515; */
   margin: 0 9em 0 0;
   padding: 0;
 }
