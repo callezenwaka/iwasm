@@ -2,7 +2,7 @@
   <div class="home">
     <!-- <img alt="Vue logo" src="../assets/callis_ezenwaka.jpg">
     <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <div class="container">
+    <div class="container" :class="{dark__theme__content__background__color : isDarkTheme, white__theme__content__background__color : isWhiteTheme}">
       <img class="profile-image" style="border-radius: 50%;" src="../assets/callis_ezenwaka.jpg" alt="Callistus Ezenwaka" />
       <div class="profile__content">
         <h1 class="name">Callistus Ezenwaka</h1>
@@ -85,7 +85,7 @@
       </div>
     </div>
     <!-- GENERAL INFORMATION -->
-    <div class="general__info">
+    <div class="general__info" :class="{dark__theme__content__background__color : isDarkTheme, white__theme__content__background__color : isWhiteTheme}">
       <h2 class="heading">General Information</h2>
       <div class="content">
         <ul class="list-unstyled">
@@ -96,7 +96,7 @@
     <!-- QUALIFICATIONS AND ACHIEVEMENTS -->
     <div class="qualifications">
       <!-- EDUCATION -->
-      <div class="education">
+      <div class="education" :class="{dark__theme__content__background__color : isDarkTheme, white__theme__content__background__color : isWhiteTheme}">
         <h2 class="heading">
           <svg class="icons" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="544.316px" height="544.316px" viewBox="0 0 544.316 544.316" style="enable-background:new 0 0 544.316 544.316;" xml:space="preserve">
             <g>
@@ -121,7 +121,7 @@
       </div>
 
       <!-- RESEARCH -->
-      <div class="research">
+      <div class="research" :class="{dark__theme__content__background__color : isDarkTheme, white__theme__content__background__color : isWhiteTheme}">
         <h2 class="heading">
           <svg class="icons" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16.057 16.057" style="enable-background:new 0 0 16.057 16.057;" xml:space="preserve">
             <g>
@@ -146,7 +146,7 @@
         </ul>
       </div>
       <!-- INTEREST -->
-      <div class="interest">
+      <div class="interest" :class="{dark__theme__content__background__color : isDarkTheme, white__theme__content__background__color : isWhiteTheme}">
         <h2 class="heading">Research Interests</h2>
         <ul class="interest__list">
           <li>
@@ -295,6 +295,12 @@ export default {
 <style scoped>
 .home {
   line-height: 2em;
+}
+.dark__theme__content__background__color {
+  background-color: #15202b;
+}
+.white__theme__content__background__color {
+  background-color: #FFFFFF;
 }
 .dark--theme--social--icon--fill--color {
   fill:#FFFFFF;

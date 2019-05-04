@@ -5,7 +5,7 @@
         <Spinner :animation-duration="2500" :rhombus-size="15" color="#ff1d5e"></Spinner>
       </div>
     </transition> -->
-    <div class="social__content">
+    <div class="social__content" :class="{dark__theme__content__background__color : isDarkTheme, white__theme__content__background__color : isWhiteTheme}">
       <h2 class="heading">Contact Me</h2><hr class="scotch-rule">
       <ul class="social">
         <li><a target="_blank" rel="noopener" href="https://www.github.com/callezenwaka" title="Github">
@@ -85,7 +85,7 @@
       </ul>
     </div>
      <!-- CONTACT -->
-    <div class="contact__info">
+    <div class="contact__info" :class="{dark__theme__content__background__color : isDarkTheme, white__theme__content__background__color : isWhiteTheme}">
       <h2 class="heading">Contact Information</h2>
       <div class="content">
         <ul class="list-unstyled">
@@ -151,6 +151,12 @@ export default {
 }
 .White__fill__color {
   fill:#801515;
+}
+.dark__theme__content__background__color {
+  background-color: #15202b;
+}
+.white__theme__content__background__color {
+  background-color: #FFFFFF;
 }
 .social__content {
   margin: 20px 10px;

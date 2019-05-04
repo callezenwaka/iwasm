@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <div class="about__statement">
+    <div class="about__statement" :class="{dark__theme__content__background__color : isDarkTheme, white__theme__content__background__color : isWhiteTheme}">
       <h2 class="about_head" :class="{dark_about_head : isDarkTheme, white_about_head : isWhiteTheme}">Hi, this is Callis. Thank you for checking up</h2><hr class="scotch-rule">
       <p>I aim to optimize service delivery by advancing smart systems that are accessible, affordable, reliable and user friendly to improve customers experience. 
         I explore the potentials in deployment of data-based analytics and technology as a tool to minimize cost and automate processes. 
@@ -11,7 +11,7 @@
       </p>
     </div>
        <!-- EVENTS -->
-    <div class="event__list">
+    <div class="event__list" :class="{dark__theme__content__background__color : isDarkTheme, white__theme__content__background__color : isWhiteTheme}">
       <h2 class="heading">Events</h2><hr class="scotch-rule">
       <div class="content">
         <div class="iframe-container">
@@ -71,6 +71,12 @@ export default {
   text-align: center;
   text-shadow: 0px 0px 5px #801515, 1px 1px 5px #801515, -1px -1px 5px #801515, 1px -1px 5px #801515, -1px 1px 5px #801515;
   font-family: 'Lobster Two', cursive;
+}
+.dark__theme__content__background__color {
+  background-color: #15202b;
+}
+.white__theme__content__background__color {
+  background-color: #FFFFFF;
 }
 .about_head {
   font-size: 1.2em;
