@@ -285,6 +285,8 @@ export default {
   created () {
     if (this.isDarkTheme) {
       this.isWhiteTheme = !this.isDarkTheme.checked
+    } else {
+      this.isWhiteTheme = true
     }
   }
 }
