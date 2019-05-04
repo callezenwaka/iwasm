@@ -3,7 +3,7 @@
     <!-- <img alt="Vue logo" src="../assets/callis_ezenwaka.jpg">
     <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <div class="container">
-      <img class="profile-image img-responsive img-circle pull-left" style="border-radius: 50%;" src="../assets/callis_ezenwaka.jpg" alt="Callistus Ezenwaka" />
+      <img class="profile-image" style="border-radius: 50%;" src="../assets/callis_ezenwaka.jpg" alt="Callistus Ezenwaka" />
       <div class="profile__content">
         <h1 class="name">Callistus Ezenwaka</h1>
         <h3 class="desc">Biomedical Engr. (B Eng), AI/ML Researcher, Software and Embedded System Engineer</h3>
@@ -426,6 +426,17 @@ export default {
   text-align: left;
 }
 @media only screen and (min-width: 690px) and (max-width: 964px) {
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+.profile-image {
+  height: 50%;
+  width: 50%;
+}
+.profile__content {
+  padding-top: 8em;
+}
 .interest__list {
   margin: auto 25%;
 }
@@ -433,6 +444,17 @@ export default {
 @media only screen and (min-width: 964px) {
 .home {
   margin: 20px 14em;
+}
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+.profile-image {
+  height: 50%;
+  width: 50%;
+}
+.profile__content {
+  padding-top: 10em;
 }
 .interest__list {
   margin: auto 35%;
