@@ -283,8 +283,8 @@ export default {
   },
   methods: {
     checkTheme () {
-      if (this.isDarkTheme) {
-        this.isWhiteTheme = false
+      if (!this.isDarkTheme) {
+        this.isWhiteTheme = true
       } 
       // else {
       //   this.isWhiteTheme = true
