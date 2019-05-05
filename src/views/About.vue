@@ -20,18 +20,16 @@
         <div class="iframe-container">
           <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/uWy1jkmjwGI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div><hr class="scotch-rule">
-      </div><!--//content-->
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-// import Spinner from '@/components/partials/Spinner.vue'
 import { mapGetters } from "vuex";
 export default {
   name: 'contact',
   components: {
-    // Spinner
   },
   data() {
     return {
@@ -82,14 +80,12 @@ export default {
   font-size: 1.2em;
 }
 .about__statement {
-	/* width: 100%; */
   margin: 20px 10px;
   padding: 10px;
   line-height: 2em;
   border: 1px solid #e2e2e2;
   border-radius: 5px;
   font-weight: 700;
-  /* text-align: center; */
 }
 .about__statement:hover {
   border-radius: 5px;

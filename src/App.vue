@@ -59,7 +59,6 @@ export default {
       } else  {
         el.classList.remove("to__top__button__active")
       }
-      // return window.scrollY > 100;
     },
     toTop () {
       setTimeout( () => {
@@ -120,15 +119,7 @@ body {
 	background: #00695c;
   color: rgba(255, 255, 255, 0.9);
   border-radius: 5px;
-	/* border: 1px solid rgba(255, 255, 255, 0.9); */
 }
-/* input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-  outline: none;
-  border-bottom: 2px solid #00695c;
-} */
 .to__top__button {
   content: "";
   box-sizing: border-box;
@@ -144,7 +135,6 @@ button:focus {
   cursor: pointer;
   outline: none;
   opacity: 0.6;
-  /* border: 3px solid  #013A6B; */
   background: #f0f0f0;
   z-index: 2;
   transform: translateY(200%);
@@ -205,12 +195,16 @@ select {
     border-top: 2px solid #e2e2e2;
     border-bottom: 1px solid #e2e2e2;
     height: 1px;
-    /* margin: 15px 0; */
     background-color: #fff;
     margin-top: 12px;
     margin-bottom: 12px;
 }
 @media only screen and (min-width: 690px) and (max-width: 964px) {
+.overlayActive {
+  transform: translate3d(-100%, 0px, 0px);
+}
+}
+@media only screen and (min-width: 964px) {
 .overlayActive {
   transform: translate3d(-100%, 0px, 0px);
 }

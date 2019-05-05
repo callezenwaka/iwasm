@@ -123,11 +123,6 @@ export default {
   computed: {
     ...mapGetters(['isDarkTheme'])
   },
-  // mounted: {
-  //   if (isDarkTheme) {
-      
-  //   }
-  // },
   created () {
     if (this.isDarkTheme) {
       this.isDark = this.isDarkTheme.checked
@@ -176,13 +171,7 @@ export default {
 }
 .contact {
   line-height: 2em;
-  /* margin: 20em 10px;
-  padding: 10px;
-  line-height: 2em;
-  border: 1px solid #e2e2e2;
-  border-radius: 5px;
   font-weight: 700;
-  text-align: center; */
 }
 .contact__info {
   margin: 20px 10px;

@@ -1,7 +1,5 @@
 <template>
   <div class="home">
-    <!-- <img alt="Vue logo" src="../assets/callis_ezenwaka.jpg">
-    <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <div class="container" :class="{dark__theme__content__background__color : isDarkTheme, white__theme__content__background__color : isWhiteTheme}">
       <img class="profile-image" style="border-radius: 50%;" src="../assets/callis_ezenwaka.jpg" alt="Callistus Ezenwaka" />
       <div class="profile__content">
@@ -142,7 +140,7 @@
         </ul><br>
         <ul class="">
           <li>Investigated the physiological changes and effect of caffeine to cardiovascular system</li>
-          <li>University of Ilorin (Aug. 2018)</li>
+          <li>University of Ilorin (Aug. 2017)</li>
         </ul>
       </div>
       <!-- INTEREST -->
@@ -259,12 +257,10 @@
 
 <script>
 // @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
 import { mapGetters } from "vuex";
 export default {
   name: 'home',
   components: {
-    // HelloWorld
   },
   data() {
     return {
@@ -278,9 +274,6 @@ export default {
   },
   computed: {
     ...mapGetters(['isDarkTheme']),
-    // isWhiteTheme: function() {
-    //   return !this.isDarkTheme ;
-    // }
   },
   created () {
     if (this.isDarkTheme) {
@@ -328,7 +321,6 @@ export default {
   margin-right: 1em
 }
 .container {
-	/* width: 100%; */
   margin: 20px 10px;
   padding: 10px;
   border: 1px solid #e2e2e2;

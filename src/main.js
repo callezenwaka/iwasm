@@ -17,17 +17,6 @@ Vue.directive('scroll', {
   },
 });
 
-Vue.directive('theme', {
-  bind(el, binding){
-    if (binding.value == 'dark') {
-      el.style.backgroundColor = '#' + '000000'
-    } else {
-      el.style.backgroundColor = '#' + 'FFFFFF'
-    }
-    
-  }
-})
-
 new Vue({
   router,
   store,

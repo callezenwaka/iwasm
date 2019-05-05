@@ -24,12 +24,8 @@
               </span>
           </li>
 				</ul>
-        <!-- <div class="demo"><router-link class="nav_link" :to="{ name: 'contact' }">Contact</router-link> data-label="Dark theme"-->
-          
-        <!-- </div> -->
 			</nav>
 		</header>
-    <!-- <h1>{{ msg }}</h1> -->
   </div>
 </template>
 
@@ -106,14 +102,12 @@ nav {
   display: flex;
   flex-direction: column;
   position: fixed;
-  /* background-color: #801515; */
   text-align: center;
   text-transform: uppercase;
   height: 100%;
   width: 80%;
   margin: 0;
   padding: 0;
-  /* top: 57.5px; */
   top: 0;
   right: 0;
   left: 0;
@@ -132,19 +126,12 @@ nav {
   max-height: 55.5px;
 }
 .nav_menu {
-  /* background-color: #801515; */
   height: 100%;
 }
 .nav_item {
   padding: 0;
   margin: 0;
   border-bottom: 2px solid #FFFFFF;
-}
-.nav_item_account {
-  /* background-color: #00bf96; */
-  background-color: #CC5200;
-  /* padding: 5px; */
-  border-radius: 5px;
 }
 .nav_link.router-link-exact-active {
   background-color: rgba(51, 51, 51, 0.5);
@@ -155,6 +142,7 @@ nav {
   padding: 18px 0;
   margin: 0;
   cursor: pointer;
+  font-weight: 700;
   color: rgba(255, 255, 255, 0.9);
 }
 .nav_link_dark_theme {
@@ -162,12 +150,6 @@ nav {
   margin: 0;
   cursor: pointer;
   color: rgba(255, 255, 255, 0.9);
-}
-.nav_link_account {
-  /* background-color: #47cf73; */
-  color: #ff9101;
-  /* color: #CC5200; */
-  font-weight: 700;
 }
 .nav_link_logo {
   cursor: pointer;
@@ -294,8 +276,6 @@ nav {
   display: block;
   flex-direction: row;
   position: unset;
-  /* background-color: #330000; */
-  /* background-color: #801515; */
   text-transform: uppercase;
   width: 100%;
   margin: 0;
@@ -310,12 +290,10 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  /* background-color: #801515; */
   margin: 0;
   padding: 0;
 }
 .nav_item {
-  /* padding: 19px 10px; */
   padding: 0;
   margin: 0;
   border-bottom: none;
@@ -327,8 +305,6 @@ nav {
   padding: 19px 10px;
 }
 .nav_link:hover {
-  /* padding: 18px 10px; */
-  /* border-bottom: 2px solid rgba(255, 255, 255, 0.5); */
   color: rgba(255, 255, 255, 0.5);
   display: block;
 }
@@ -356,8 +332,6 @@ nav {
   display: block;
   flex-direction: row;
   position: unset;
-  /* background-color: #330000; */
-  /* background-color: #801515; */
   text-transform: uppercase;
   width: 100%;
   margin: 0;
@@ -372,12 +346,10 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  /* background-color: #801515; */
   margin: 0 9em 0 0;
   padding: 0;
 }
 .nav_item {
-  /* padding: 19px 10px; */
   padding: 0;
   margin: 0;
   border-bottom: none;
@@ -389,11 +361,8 @@ nav {
   padding: 19px 10px;
 }
 .nav_link:hover {
-  /* padding: 18px 10px; */
-  /* border-bottom: 2px solid rgba(255, 255, 255, 0.5); */
   color: rgba(255, 255, 255, 0.5);
   display: block;
 }
 }
-/* and (max-width: 964px) */
 </style>
