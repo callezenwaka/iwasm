@@ -123,12 +123,17 @@ export default {
   computed: {
     ...mapGetters(['isDarkTheme'])
   },
+  mounted() {
+    this.checkTheme()
+  },
   created () {
-    if (this.isDarkTheme) {
-      this.isDark = this.isDarkTheme.checked
-      this.isWhiteTheme = !this.isDarkTheme.checked
-    } else {
-      this.isWhiteTheme = true
+    this.checkTheme()
+  },
+  methods: {
+    checkTheme () {
+      if (this.isDarkTheme) {
+        this.isWhiteTheme = false
+      }
     }
   }
 }
