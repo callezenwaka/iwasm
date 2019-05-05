@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="container" :class="{dark__theme__content__background__color : isDarkTheme, white__theme__content__background__color : isWhiteTheme}">
-      <img class="profile-image" style="border-radius: 50%;" src="../assets/callis_ezenwaka.jpg" alt="Callistus Ezenwaka" />
+      <img class="profile-image" style="border-radius: 50%;" src="../assets/profile.jpg" alt="Callistus Ezenwaka" />
       <div class="profile__content">
         <h1 class="name">Callistus Ezenwaka</h1>
         <h3 class="desc">Biomedical Engr. (B Eng), AI/ML Researcher, Software and Embedded System Engineer</h3>
@@ -275,11 +275,20 @@ export default {
   computed: {
     ...mapGetters(['isDarkTheme']),
   },
+  mounted() {
+    this.checkTheme()
+  },
   created () {
-    if (this.isDarkTheme) {
-      this.isWhiteTheme = !this.isDarkTheme.checked
-    } else {
-      this.isWhiteTheme = true
+    this.checkTheme()
+  },
+  methods: {
+    checkTheme () {
+      if (this.isDarkTheme) {
+        this.isWhiteTheme = false
+      } 
+      // else {
+      //   this.isWhiteTheme = true
+      // } 
     }
   }
 }
@@ -338,6 +347,10 @@ export default {
 }
 .profile__content {
   line-height: 2em;
+}
+.profile-image {
+  height: 50%;
+  width: 50%;
 }
 .social {
   display: inline-flex;
