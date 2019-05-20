@@ -37,7 +37,7 @@ export default {
   data () {
     return {
       isMenuActive: false,
-      isChecked: true
+      isChecked: false
     }
   },
   watch: {
