@@ -1,19 +1,23 @@
 <template>
   <div class="footer__container">
-		<footer :class="[isDarkTheme ? 'dark--theme--background--color ' : 'White--theme--background--color']" class="footer">
+		<footer :class="{'dark--theme--background--color' : isDarkTheme, 'White--theme--background--color' : isWhiteTheme}" class="footer">
 			<span class="footer_content">All right reserved. &copy; {{ new Date().getFullYear() }}  <span><router-link class="nav_link_footer" to="https://twitter.com/callezenwaka">@callezenwaka</router-link> ♥</span></span>
 		</footer>
   </div>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   name: 'Footer',
-  props: ['isDarkTheme'],
+  // props: ['isDarkTheme'],
   data () {
     return {
-      isChecked: false,
+      // isChecked: false,
     }
+  },
+  computed: {
+    ...mapGetters(['isDarkTheme','isWhiteTheme'])
   }
 }
 </script>

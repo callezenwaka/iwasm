@@ -1,19 +1,21 @@
 <template>
   <div id="app" :class="{ overlayApp: isOverlayActive, 'dark--theme': isDarkTheme }">
-    <button class="to__top__button" v-scroll="handleScroll" @click.stop.prevent="toTop">
+    <button class="to__top__button" :class="{'dark--theme--to--top' : isDarkTheme, 'white--theme--to--top': isWhiteTheme}" v-scroll="handleScroll" @click.stop.prevent="toTop">
       <img src="./assets/up-chevron.svg" class="to__top__icon" alt="Top">
       <span style="display: none">Top</span>
     </button>
     <Header :isOverlayActive="isOverlayActive" @toggleMenu="onToggleMenu($event)" @toggletheme="onToggleTheme"></Header>
     <div class="overlay" :class="[isOverlayActive ? 'overlayActive' : '']" id="overlay" @click.stop.prevent="isOverlayActive = !isOverlayActive"></div>
     <router-view/>
-    <Footer :isDarkTheme="isDarkTheme"></Footer>
+    <!-- <Footer :isDarkTheme="isDarkTheme"></Footer> -->
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
 import Header from '@/components/partials/Header.vue'
 import Footer from '@/components/partials/Footer.vue'
+import { mapGetters } from "vuex";
 export default {
   components: {
     Header,
@@ -22,26 +24,29 @@ export default {
   data () {
     return {
       isOverlayActive: false,
-      isDarkTheme: false
+      // isDarkTheme: false
     }
   },
   mounted () {
     this.$nextTick(function () {
       window.addEventListener('click', this.toggleNav)
     })
-    if (localStorage.getItem('isDarkTheme')) {
-      this.isDarkTheme = JSON.parse(localStorage.getItem('isDarkTheme'))
-    }
+    // if (localStorage.getItem('isDarkTheme')) {
+    //   this.isDarkTheme = JSON.parse(localStorage.getItem('isDarkTheme'))
+    // }
+  },
+  computed: {
+    ...mapGetters(['isDarkTheme','isWhiteTheme'])
   },
   watch: {
     '$route' () {
       this.isOverlayActive = false;
     },
-    isDarkTheme: {
-      handler() {
-        localStorage.setItem('isDarkTheme', JSON.stringify(this.isDarkTheme))
-      }
-    }
+    // isDarkTheme: {
+    //   handler() {
+    //     localStorage.setItem('isDarkTheme', JSON.stringify(this.isDarkTheme))
+    //   }
+    // }
   },
   methods: {
     onToggleMenu (value) {
@@ -142,13 +147,19 @@ body {
 }
 .to__top__button:hover { 
   background: #807979;
-  border: 3px solid  #FFAAAA;
+  /* border: 3px solid  #FFAAAA; */
 }
 /*********** dsplays page to the top styling **********/
 .to__top__button__active {
   cursor: pointer;
   transform: translateX(0);
   transition: transform 0.3s ease-out;
+}
+.dark--theme--to--top {
+  border: 3px solid #15202b;
+}
+.white--theme--to--top {
+  border: 3px solid  #FFAAAA;
 }
 .to__top__icon {
   width: 60%;

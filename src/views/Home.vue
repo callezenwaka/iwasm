@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div class="container" :class="{dark__theme__content__background__color : isDarkTheme, white__theme__content__background__color : isWhiteTheme}">
+    <div class="container font--size" :class="{dark__theme__content__background__color : isDarkTheme, white__theme__content__background__color : isWhiteTheme}">
       <img class="profile-image" style="border-radius: 50%;" src="../assets/profile.jpg" alt="Callistus Ezenwaka" />
       <div class="profile__content">
         <h1 class="name">Callistus Ezenwaka</h1>
@@ -83,7 +83,7 @@
       </div>
     </div>
     <!-- GENERAL INFORMATION -->
-    <div class="general__info" :class="{dark__theme__content__background__color : isDarkTheme, white__theme__content__background__color : isWhiteTheme}">
+    <div class="general__info font--size" :class="{dark__theme__content__background__color : isDarkTheme, white__theme__content__background__color : isWhiteTheme}">
       <h2 class="heading">General Information</h2>
       <div class="content">
         <ul class="list-unstyled">
@@ -92,7 +92,7 @@
       </div><!--//content-->
     </div>
     <!-- QUALIFICATIONS AND ACHIEVEMENTS -->
-    <div class="qualifications">
+    <div class="qualifications font--size">
       <!-- EDUCATION -->
       <div class="education" :class="{dark__theme__content__background__color : isDarkTheme, white__theme__content__background__color : isWhiteTheme}">
         <h2 class="heading">
@@ -264,33 +264,33 @@ export default {
   },
   data() {
     return {
-      isWhiteTheme: false
+      // isWhiteTheme: false
     }
   },
-  watch: {
-    isDarkTheme() {
-      this.isWhiteTheme = !this.isDarkTheme.checked
-    }
-  },
+  // watch: {
+  //   isDarkTheme() {
+  //     this.isWhiteTheme = !this.isDarkTheme.checked
+  //   }
+  // },
   computed: {
-    ...mapGetters(['isDarkTheme']),
+    ...mapGetters(['isDarkTheme','isWhiteTheme'])
   },
-  mounted() {
-    this.checkTheme()
-  },
-  created () {
-    this.checkTheme()
-  },
-  methods: {
-    checkTheme () {
-      if (!this.isDarkTheme) {
-        this.isWhiteTheme = true
-      } 
-      // else {
-      //   this.isWhiteTheme = true
-      // } 
-    }
-  }
+  // mounted() {
+  //   this.checkTheme()
+  // },
+  // created () {
+  //   this.checkTheme()
+  // },
+  // methods: {
+  //   checkTheme () {
+  //     if (!this.isDarkTheme) {
+  //       this.isWhiteTheme = true
+  //     } 
+  //     // else {
+  //     //   this.isWhiteTheme = true
+  //     // } 
+  //   }
+  // }
 }
 </script>
 
@@ -458,6 +458,9 @@ export default {
 .home {
   margin: 20px 14em;
 }
+.font--size {
+  font-size: 1.5em;
+}
 .container {
   display: flex;
   justify-content: space-around;
@@ -467,10 +470,10 @@ export default {
   width: 50%;
 }
 .profile__content {
-  padding-top: 10em;
+  padding-top: 2.5em;
 }
 .interest__list {
-  margin: auto 35%;
+  /* margin: auto 35%; */
 }
 }
 </style>

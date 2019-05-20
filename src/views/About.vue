@@ -17,9 +17,9 @@
         <div class="iframe-container">
           <iframe width="560" height="315" src="https://www.youtube.com/embed/M8TH7O7BQAI?start=120" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div><hr class="scotch-rule">
-        <div class="iframe-container">
+        <!-- <div class="iframe-container">
           <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/uWy1jkmjwGI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div><hr class="scotch-rule">
+        </div><hr class="scotch-rule"> -->
       </div>
     </div>
   </div>
@@ -33,32 +33,32 @@ export default {
   },
   data() {
     return {
-      isWhiteTheme: false,
-      isDark: false
+      // isWhiteTheme: false,
+      // isDark: false
     }
   },
-  watch: {
-    isDarkTheme() {
-      this.isDark = this.isDarkTheme.checked
-      this.isWhiteTheme = !this.isDarkTheme.checked
-    }
-  },
+  // watch: {
+  //   isDarkTheme() {
+  //     this.isDark = this.isDarkTheme.checked
+  //     this.isWhiteTheme = !this.isDarkTheme.checked
+  //   }
+  // },
   computed: {
-    ...mapGetters(['isDarkTheme'])
+    ...mapGetters(['isDarkTheme','isWhiteTheme'])
   },
-  mounted() {
-    this.checkTheme()
-  },
-  created () {
-    this.checkTheme()
-  },
-  methods: {
-    checkTheme () {
-      if (!this.isDarkTheme) {
-        this.isWhiteTheme = true
-      }
-    }
-  }
+  // mounted() {
+  //   this.checkTheme()
+  // },
+  // created () {
+  //   this.checkTheme()
+  // },
+  // methods: {
+  //   checkTheme () {
+  //     if (!this.isDarkTheme) {
+  //       this.isWhiteTheme = true
+  //     }
+  //   }
+  // }
 }
 </script>
 

@@ -89,10 +89,10 @@
       <h2 class="heading">Contact Information</h2>
       <div class="content">
         <ul class="list-unstyled">
-          <li><span>Organization: </span><a :class="{dark_anchor_link : isDark, white_anchor_link : isWhiteTheme}" href="https://www.ge.com/africa/company/nigeria">GE Healthcare, Nigeria</a></li>
-          <li><span>Location: </span><a :class="{dark_anchor_link : isDark, white_anchor_link : isWhiteTheme}" href="https://www.google.com.ng/maps/place/GE+International+Operations+(Nig.)+Limited/@6.435724,3.4360494,17z/data=!4m8!1m2!2m1!1sMansard+Place,+927%2F928+Bishop+Aboyade+Cole+Street,+VI,+Lagos!3m4!1s0x103bf52692189957:0x71cdec328184bf82!8m2!3d6.4356954!4d3.4382248">Mansard Place, 927/928 Bishop Aboyade Cole Street, VI, Lagos</a></li>
-          <li><span>Phone: </span><a :class="{dark_anchor_link : isDark, white_anchor_link : isWhiteTheme}" href="tel:+23408032130560">+234-(803)-213-0560</a></li>
-          <li><span>Email: </span><a :class="{dark_anchor_link : isDark, white_anchor_link : isWhiteTheme}" href="mailto:callistus.ezenwaka@ge.com">callistus.ezenwaka@ge.com</a></li><hr class="scotch-rule">
+          <li><span>Organization: </span><a :class="{dark_anchor_link : isDarkTheme, white_anchor_link : isWhiteTheme}" href="https://www.ge.com/africa/company/nigeria">GE Healthcare, Nigeria</a></li>
+          <li><span>Location: </span><a :class="{dark_anchor_link : isDarkTheme, white_anchor_link : isWhiteTheme}" href="https://www.google.com.ng/maps/place/GE+International+Operations+(Nig.)+Limited/@6.435724,3.4360494,17z/data=!4m8!1m2!2m1!1sMansard+Place,+927%2F928+Bishop+Aboyade+Cole+Street,+VI,+Lagos!3m4!1s0x103bf52692189957:0x71cdec328184bf82!8m2!3d6.4356954!4d3.4382248">Mansard Place, 927/928 Bishop Aboyade Cole Street, VI, Lagos</a></li>
+          <li><span>Phone: </span><a :class="{dark_anchor_link : isDarkTheme, white_anchor_link : isWhiteTheme}" href="tel:+23408032130560">+234-(803)-213-0560</a></li>
+          <li><span>Email: </span><a :class="{dark_anchor_link : isDarkTheme, white_anchor_link : isWhiteTheme}" href="mailto:callistus.ezenwaka@ge.com">callistus.ezenwaka@ge.com</a></li><hr class="scotch-rule">
           <li><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.675382490854!2d3.436049414770228!3d6.43572404534383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf52692189957%3A0x71cdec328184bf82!2sGE+International+Operations+(Nig.)+Limited!5e0!3m2!1sen!2sng!4v1542448048655" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></li>
         </ul>
       </div>
@@ -110,32 +110,32 @@ export default {
   },
   data() {
     return {
-      isWhiteTheme: false,
-      isDark: false
+      // isWhiteTheme: false,
+      // isDark: false
     }
   },
-  watch: {
-    isDarkTheme() {
-      this.isDark = this.isDarkTheme.checked
-      this.isWhiteTheme = !this.isDarkTheme.checked
-    }
-  },
+  // watch: {
+  //   isDarkTheme() {
+  //     this.isDark = this.isDarkTheme.checked
+  //     this.isWhiteTheme = !this.isDarkTheme.checked
+  //   }
+  // },
   computed: {
-    ...mapGetters(['isDarkTheme'])
+    ...mapGetters(['isDarkTheme','isWhiteTheme'])
   },
-  mounted() {
-    this.checkTheme()
-  },
-  created () {
-    this.checkTheme()
-  },
-  methods: {
-    checkTheme () {
-      if (!this.isDarkTheme) {
-        this.isWhiteTheme = true
-      }
-    }
-  }
+  // mounted() {
+  //   this.checkTheme()
+  // },
+  // created () {
+  //   this.checkTheme()
+  // },
+  // methods: {
+  //   checkTheme () {
+  //     if (!this.isDarkTheme) {
+  //       this.isWhiteTheme = true
+  //     }
+  //   }
+  // }
 }
 </script>
 

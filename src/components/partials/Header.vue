@@ -1,6 +1,6 @@
 <template>
   <div class="header__container">
-		<header class=" header header_border" :class="[isChecked ? 'dark--theme--background--color ' : 'White--theme--background--color']">
+		<header class=" header header_border" :class="{'dark--theme--background--color' : isDarkTheme, 'White--theme--background--color' : isWhiteTheme}">
       <div class="menu__nav">
         <div class="logo">
           <router-link class="nav_link_logo" :to="{ name: 'home' }">CALLIS EZENWAKA</router-link>
@@ -13,7 +13,7 @@
         </div>
       </div>
 			<nav class="nav" :class="{ navMenuActive: MenuActive}">
-				<ul :class="[isChecked ? 'dark--theme--background--color ' : 'White--theme--background--color']" class="nav_menu" id="nav_menu">
+				<ul :class="{'dark--theme--background--color' : isDarkTheme, 'White--theme--background--color' : isWhiteTheme}" class="nav_menu" id="nav_menu">
 					<li class="nav_item"><router-link class="nav_link" :to="{ name: 'home' }">Home</router-link></li>
 					<li class="nav_item"><router-link class="nav_link" :to="{ name: 'about' }">About us</router-link></li>
 					<li class="nav_item"><router-link class="nav_link" :to="{ name: 'contact' }">Contact</router-link></li>
@@ -30,13 +30,14 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   name: 'Header',
   props: ['isOverlayActive'],
   data () {
     return {
       isMenuActive: false,
-      isChecked: false
+      isChecked: true
     }
   },
   watch: {
@@ -47,14 +48,15 @@ export default {
       this.isOverlayActive = this.isMenuActive
     }
   },
+  computed: {
+    ...mapGetters(['isDarkTheme','isWhiteTheme']),
+    MenuActive: function() {
+      return this.isMenuActive && this.isOverlayActive;
+    }
+  },
   mounted() {
     if (localStorage.getItem('isDarkTheme')) {
       this.isChecked = JSON.parse(localStorage.getItem('isDarkTheme'))
-    }
-  },
-  computed: {
-    MenuActive: function() {
-      return this.isMenuActive && this.isOverlayActive;
     }
   },
   methods: {
@@ -62,7 +64,7 @@ export default {
       this.$emit('toggleMenu', this.isMenuActive);
     },
     onChecking () {
-      this.$emit('toggletheme', this.isChecked);
+      // this.$emit('toggletheme', this.isChecked);
       this.$store.dispatch('SET_DARK_THEME',{checked: this.isChecked})
     },
     toggleNavMenu () {
