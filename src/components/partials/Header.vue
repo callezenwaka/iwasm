@@ -59,6 +59,11 @@ export default {
       this.isChecked = JSON.parse(localStorage.getItem('isDarkTheme'))
     }
   },
+  created () {
+    if (localStorage.getItem('isDarkTheme')) {
+      this.isChecked = JSON.parse(localStorage.getItem('isDarkTheme'))
+    }
+  },
   methods: {
     onMenuActive () {
       this.$emit('toggleMenu', this.isMenuActive);

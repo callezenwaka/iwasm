@@ -472,8 +472,8 @@ export default {
 .profile__content {
   padding-top: 2.5em;
 }
-.interest__list {
-  /* margin: auto 35%; */
-}
+/* .interest__list {
+  margin: auto 35%;
+} */
 }
 </style>
