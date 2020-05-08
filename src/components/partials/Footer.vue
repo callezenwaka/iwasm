@@ -1,49 +1,21 @@
 <template>
-  <div class="footer__container">
-		<footer :class="{'dark--theme--background--color' : isDarkTheme, 'White--theme--background--color' : isWhiteTheme}" class="footer">
-			<span class="footer_content">All right reserved. &copy; {{ new Date().getFullYear() }}  <span><router-link class="nav_link_footer" to="https://twitter.com/callezenwaka">@callezenwaka</router-link> ♥</span></span>
+    <div class="footer">
+        <footer>
+			<span class="">Copyright &copy; <span id="footer_year"></span> All rights reserved.  🎄</span> 
 		</footer>
-  </div>
+    </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-export default {
-  name: 'Footer',
-  // props: ['isDarkTheme'],
-  data () {
-    return {
-      // isChecked: false,
+    export default {
+        
     }
-  },
-  computed: {
-    ...mapGetters(['isDarkTheme','isWhiteTheme'])
-  }
-}
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only ©-->
-<style scoped>
-.dark--theme--background--color {
-  background-color: #15202b;
-}
-.White--theme--background--color {
-  background-color: #801515;
-}
+<style lang="css" scoped>
 footer {
-  color: rgba(255, 255, 255, 0.9);
-	min-height: 45px;
-	padding-top: 15px;
-	text-align: center;
-	margin: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-}
-.footer_content {
-	padding-top: 15px;
-}
-.nav_link_footer {
-	color: rgba(255, 255, 255, 0.9);
+    background-color: #f2e9d2;
+    text-align: center;
+    padding: 2.5rem 0;
 }
 </style>

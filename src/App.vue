@@ -1,25 +1,27 @@
 <template>
-  <div id="app" :class="{ overlayApp: isOverlayActive, 'dark--theme': isDarkTheme }">
-    <button class="to__top__button" :class="{'dark--theme--to--top' : isDarkTheme, 'white--theme--to--top': isWhiteTheme}" v-scroll="handleScroll" @click.stop.prevent="toTop">
+  <div id="app">
+    <button aria-label="back to top" class="back-to-top" style="display: block;"><span style="">&uarr;</span></button>
+  <!-- <div id="app" :class="{ overlayApp: isOverlayActive, 'dark--theme': isDarkTheme }"> -->
+    <!-- <button class="to__top__button" :class="{'dark--theme--to--top' : isDarkTheme, 'white--theme--to--top': isWhiteTheme}" v-scroll="handleScroll" @click.stop.prevent="toTop">
       <img src="./assets/up-chevron.svg" class="to__top__icon" alt="Top">
-      <span style="display: none">Top</span>
+      <span style="display: none">Top</span>&uarr;
     </button>
     <Header :isOverlayActive="isOverlayActive" @toggleMenu="onToggleMenu($event)" @toggletheme="onToggleTheme"></Header>
-    <div class="overlay" :class="[isOverlayActive ? 'overlayActive' : '']" id="overlay" @click.stop.prevent="isOverlayActive = !isOverlayActive"></div>
+    <div class="overlay" :class="[isOverlayActive ? 'overlayActive' : '']" id="overlay" @click.stop.prevent="isOverlayActive = !isOverlayActive"></div> -->
     <router-view/>
     <!-- <Footer :isDarkTheme="isDarkTheme"></Footer> -->
-    <Footer></Footer>
+    <!-- <Footer></Footer> -->
   </div>
 </template>
 
 <script>
-import Header from '@/components/partials/Header.vue'
-import Footer from '@/components/partials/Footer.vue'
+// import Header from '@/components/partials/Header.vue'
+// import Footer from '@/components/partials/Footer.vue'
 import { mapGetters } from "vuex";
 export default {
   components: {
-    Header,
-    Footer
+    // Header,
+    // Footer
   },
   data () {
     return {
@@ -75,15 +77,47 @@ export default {
 </script>
 
 <style>
-@import './assets/styles/mobile.css';
-body {
+/* @import './assets/styles/mobile.css'; */
+html,body{
+  margin: 0;
+  padding: 0;
+  /* font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif; */
+  width: 100%;
+  min-height: 100%;
   color: #000000;
-  /* background-color: rgb(16, 23, 30); */
-  /* color: #FFFFFF; */
-  /* rgb(16, 23, 30);10171e main*/
-  /* rgb(21, 32, 43);#15202b content*/
-  /* rgb(56, 68, 77);#38444d border bottom line */
+  background-color: #fcfaf6;
+  /* background-color: #15202b; */
+  font-size: 1rem;
 }
+h1,h2,h3,h4,h5,h6,ul,li,p,hr, div, header, footer {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: #000000;
+}
+ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+button.back-to-top {
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  z-index: 999;
+  right: 20px;
+  bottom: 20px;
+  border: none;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  cursor: pointer;
+  display: none;
+  background: #918b7e;
+}
+
 .dark--theme {
   background-color: #10171e;
   color: #FFFFFF;
@@ -117,7 +151,7 @@ body {
 .page__button {
   width: 100%;
 	padding: 5px;
-	font-size: 1em;
+	/* font-size: 1em; */
 	font-weight: bold;
   line-height: 1em;
   font-style: normal;
@@ -172,7 +206,7 @@ select,
 textarea {
   /* display: inline-flex; */
   font-family: 'Open sans', sans-serif;
-  font-size: 100%;
+  /* font-size: 100%; */
   line-height: 1.15;
   margin: 0;
 }
@@ -188,10 +222,10 @@ select {
   text-align: center;
   margin: 30px 0;
 }
-.heading {
+/* .heading {
   margin: 10px;
-  text-align: center;
-}
+  text-align: center; 
+}*/
 .scotch-rule:first-child {
     margin: 0 0 6px;
 }
@@ -210,12 +244,19 @@ select {
     margin-top: 12px;
     margin-bottom: 12px;
 }
-@media only screen and (min-width: 690px) and (max-width: 964px) {
+@media only screen and (min-width: 540px) {
+/* @media only screen and (min-width: 5400px) and (max-width: 964px) { */
+body {
+  font-size: 1.5rem;
+}
 .overlayActive {
   transform: translate3d(-100%, 0px, 0px);
 }
 }
 @media only screen and (min-width: 964px) {
+  body {
+  font-size: 1.5rem;
+}
 .overlayActive {
   transform: translate3d(-100%, 0px, 0px);
 }
