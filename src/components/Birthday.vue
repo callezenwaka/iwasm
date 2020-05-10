@@ -10458,7 +10458,6 @@ div {
 
 /* Text Lobster */
 /* Main styles */
-@import url('https://fonts.googleapis.com/css?family=Lobster');
 
 .text {
   fill: none;
@@ -10510,26 +10509,6 @@ div {
     stroke-dashoffset: -400;
   }
 }
-
-/* Other styles */
-/* html, body {
-  height: 100%;
-} */
-/* .container {
-  background: #111;
-  background-srgb(0, 0, 0) .2em 100%;
-  font: 14.5em/1 "Lobster", Impact;
-  text-transform: uppercase;
-  margin: 0;
-} */
-/* body {
-  background: #111;
-  background-srgb(0, 0, 0) .2em 100%;
-  font: 14.5em/1 "Lobster", Impact;
-  text-transform: uppercase;
-  margin: 0;
-} */
-
 svg {
   position: absolute;
   width: 100%;
