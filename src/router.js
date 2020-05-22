@@ -6,6 +6,7 @@ import About from './views/About.vue'
 import Contact from './views/Contact.vue'
 import Blog from './views/Blog.vue'
 import Birthday from './components/Birthday.vue'
+import Ballons from './components/Ballons.vue'
 
 Vue.use(Router)
 
@@ -19,5 +20,6 @@ export default new Router({
     { path: '/contact', name: 'contact', component: Contact },
     { path: '/blog', name: 'blog', component: Blog },
     { path: '/birthday/may08/vee', name: 'birthday', component: Birthday },
+    { path: '/ballons', name: 'ballons', component: Ballons },
   ]
 })
