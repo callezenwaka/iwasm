@@ -84,7 +84,7 @@ html, body{
 	color: #000000;
 	background-color: #fcfaf6;
 	/* background-color: #15202b; */
-	font-size: .8rem;
+	font-size: 1rem;
 }
 h1,h2,h3,h4,h5,h6,ul,li,p,hr, div, header, footer {
 	margin: 0;
