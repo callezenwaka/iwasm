@@ -1,29 +1,44 @@
 <template>
     <div class="birthday">
-       <div class="container">
-          <h1 class="name">HBD Vee 🎂</h1>
-          <div class="balloon"></div>
-          <div class="balloon"></div>
-          <div class="balloon"></div>
-          <div class="balloon"></div>
-          <div class="balloon"></div>
-          <div class="balloon"></div>
-          <div class="balloon"></div>
-          <div class="balloon"></div>
-          <div class="balloon"></div>
-          <div class="balloon"></div>
-        </div>
+        <Header></Header>
+		<section class="container">
+			<h1 class="name" style="text-align: center;">
+				<span style="margin: 0 auto; width: 80%;">Happy Birthday</span><br><span> <em style="text-transform: capitalize; margin: 0 auto; width: 80%;">{{ celebrant }}</em> 🎂</span></h1>
+			<h1 class="name"></h1>
+			<div class="balloon"></div>
+			<div class="balloon"></div>
+			<div class="balloon"></div>
+			<div class="balloon"></div>
+			<div class="balloon"></div>
+			<div class="balloon"></div>
+			<div class="balloon"></div>
+			<div class="balloon"></div>
+			<div class="balloon"></div>
+			<div class="balloon"></div>
+		</section>
+        <Footer></Footer>
     </div>
 </template>
 
 <script>
-    export default {
-      name: 'birthday',
-      methods: {
-        
-      }
-        
-    }
+// @ is an alias to /src
+import Header from '@/components/partials/Header.vue'
+import Footer from '@/components/partials/Footer.vue'
+import { mapGetters } from 'vuex'
+export default {
+	name: 'birthday',
+	components: {
+		Header,
+		Footer,
+	},
+	computed: {
+        ...mapGetters(['celebrant']),
+    },
+	methods: {
+		
+	}
+    
+}
 </script>
 
 <style scoped>

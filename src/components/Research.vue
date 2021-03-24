@@ -35,7 +35,7 @@
 import Header from '@/components/partials/Header.vue'
 import Footer from '@/components/partials/Footer.vue'
     export default {
-        name: 'research',
+        name: 'Research',
         components: {
             Header,
             Footer
@@ -54,6 +54,7 @@ import Footer from '@/components/partials/Footer.vue'
 .research_list {
     background-color: #f8f4e8;
     padding: 1rem;
+    margin: 2rem 0;
 }
 .image {
     width: 100%;

@@ -13,7 +13,7 @@
 import Header from '@/components/partials/Header.vue'
 import Footer from '@/components/partials/Footer.vue'
     export default {
-        name: 'blog',
+        name: 'Blog',
         components: {
             Header,
             Footer
@@ -23,5 +23,8 @@ import Footer from '@/components/partials/Footer.vue'
 </script>
 
 <style scoped>
-
+/* blog */
+.blog {
+    min-height: 100vh;
+}
 </style>

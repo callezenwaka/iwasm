@@ -6,11 +6,8 @@
                 <div class="card">
                     <img class="responsive" src="../assets/callis_ezenwaka_profile_pic.jpg" alt="Callis Ezenwaka Profile Pic">
                 </div>
-                <!-- <img class="pic" src="https://picsum.photos/300/500" alt="Callis Ezenwaka Profile Pic" /> -->
-                <!-- <img class="pic" src="../assets/callis_ezenwaka_profile_pic.jpg" alt="Callis Ezenwaka Profile Pic" /> -->
-                <!-- <img class="profile__pic" srcset="https://res.cloudinary.com/demo/image/upload/w_150,h_300,c_fill/boulder.jpg, ../assets/callis_ezenwaka_profile_pic.jpg 800w" sizes="(max-width: 600px) 480px, 800px" src="../assets/callis_ezenwaka_profile_pic.jpg" alt="Callis Ezenwaka Profile Pic"> -->
                 <div class="details">
-                    <h4>Seeks to optimise service delivery by advancing products that are <strong class="text">accessible</strong>,
+                    <h4>I have interest in optimising service delivery by advancing products that are <strong class="text">accessible</strong>,
                         <strong class="text">affordable</strong>, <strong class="text">reliable</strong>, and 
                         <strong class="text">user-friendly</strong> to improve user experience, minimise cost, and automate processes.</h4>
                     <!-- <h4>Applies machine learning techniques to train, evaluate, and deploy models that solve business problems.</h4> -->
@@ -29,8 +26,11 @@
                 <span>Work Experience</span>
             </h2>
             <div class="content">
-                <p class="tip"><em>IT Analyst</em>, GE Gas Power, 2019 - Present</p>
-                <p class="tip"><em>Project Specialist</em>, GE Healthcare, 2018 - 2019</p>
+                <div class="tip" v-for="experience in experiences" :key="experience.id">
+                    <span><em>{{ experience.role }}</em>, {{ experience.company }}, </span>
+                    <span>{{ experience.starttime }} - {{ experience.endtime || 'Present' }}.</span>
+                </div>
+                <!-- <p class="tip"><em>Project Specialist</em>, GE Healthcare, 2018 - 2019</p> -->
             </div>
         </section>
         <section class="interest">
@@ -45,33 +45,33 @@
                     C10.694,0,10.93,0.236,10.93,0.526c0,0.289-0.236,0.524-0.525,0.524h-0.201v3.086c3.246,5.328,5.236,9.028,5.236,9.028
                     C15.945,14.666,15.389,16.057,13.771,16.057z M12.919,10.981c-0.527-0.954-2.886-5.041-3.648-6.289l-0.127-0.21H6.913l-0.127,0.21
                     c-0.828,1.36-3.32,5.714-3.658,6.289H12.919z"/>
-                    </g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                    </g>
                 </svg>
                 <span>Research Interest</span>
             </h2>
             <div class="content">
-                <p class="tip">Machine Learning</p>
-                <p class="tip">Artificial Intelligence</p>
-                <p class="tip">Bioinformatics</p>
-                <p class="tip">Data Science</p>
-                <p class="tip">Data Fusion</p>
-                <p class="tip">Product Development</p>
+                <div class="tip" v-for="interest in interests" :key="interest.id">
+                    <span>{{ interest.name }}</span>
+                </div>
             </div>
         </section>
         <section class="education">
             <h2 class="">
                 <svg class="icons" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="544.316px" height="544.316px" viewBox="0 0 544.316 544.316" style="enable-background:new 0 0 544.316 544.316;" xml:space="preserve">
-                    <g><g>
+                    <g>
                         <path d="M272.164,340.276L89.452,274.884l0.625,119.831c0,0,85.447,43.077,182.087,43.077
                         c100.907,0,182.718-50.808,182.718-50.808l-0.76-112.006L272.164,340.276z"/>
                         <polygon points="510.149,229.122 544.316,216.616 272.164,106.524 0,216.616 272.164,316.279 489.527,236.677 489.527,352.607 
                         475.795,352.607 475.795,408.354 521.312,408.354 521.312,352.607 510.149,352.607"/>
-                    </g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                    </g>
                 </svg>
                 <span>Education</span>
             </h2>
             <div class="content">
-                <p class="tip">B.Eng in Biomedical Engineering, 2017, University of Ilorin</p>
+                <div class="tip" v-for="education in educations" :key="education.id">
+                    <span>{{education.degree }}, {{ education.year }},</span>
+                    <span>{{ education.school }}.</span>
+                </div>
             </div>
         </section>
         <Footer></Footer>
@@ -82,21 +82,24 @@
 // @ is an alias to /src
 import Header from '@/components/partials/Header.vue'
 import Footer from '@/components/partials/Footer.vue'
-    export default {
-    name: 'index',
+import { mapGetters } from 'vuex'
+export default {
+    name: 'Home',
     components: {
         Header,
         Footer
     },
-        
-    }
+	computed: {
+        ...mapGetters(['educations', 'experiences', 'interests']),
+    },
+}
 </script>
 
 <style scoped>
 .icons {
-  height: 1em;
-  width: 1em;
-  margin-right: 1em
+    height: 1em;
+    width: 1em;
+    margin-right: 1em
 }
 .home {
     background-color: #f8f4e8;
@@ -151,73 +154,75 @@ import Footer from '@/components/partials/Footer.vue'
 }
 /*  */
 .content {
-  padding-left: 0;
+    padding-left: 0;
 }
 .content {
-  position: relative;
-  /* padding: 35px 0; */
-  max-width: 700px;
-  margin: 0 auto;
-  padding-left: 1rem;
+    position: relative;
+    /* padding: 35px 0; */
+    max-width: 700px;
+    /* margin: 0 auto; */
+    padding-left: 1rem;
 }
-.content p.tip {
-  border-left-color: #af9d6f;
+.content div.tip {
+    border-left-color: #af9d6f;
 }
-.content p.tip, .content p.success {
-  padding: 1rem;
-  /*     margin: 2em 0; */
-  border-left-width: 4px;
-  border-left-style: solid;
-  /* background-color: #f8f8f8; */
-  position: relative;
-  border-bottom-right-radius: 2px;
-  border-top-right-radius: 2px;
+.content div.tip, .content p.success {
+    padding: 1rem;
+    /*     margin: 2em 0; */
+    border-left-width: 4px;
+    border-left-style: solid;
+    /* background-color: #f8f8f8; */
+    position: relative;
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
 }
-.content p, .content ul, .content ol {
-  line-height: 1.6em;
-  margin: 1.2em 0 -1.2em;
-  padding-bottom: 1.2em;
-  position: relative;
-  z-index: 1;
+.content div, .content ul, .content ol {
+    line-height: 1.6em;
+    margin: 1.2em 0 -1.2em;
+    padding-bottom: 1.2em;
+    position: relative;
+    z-index: 1;
 }
-p {
-  word-spacing: 0.05em;
+div {
+    word-spacing: 0.05em;
 }
-.content p.tip:before {
-  content: "!";
-  background-color: #af9d6f;
+.content div.tip {
+    display: flex;
+    flex-direction: column;
 }
-.content p.tip:before, .content p.success:before {
-  position: absolute;
-  top: 14px;
-  left: -12px;
-  color: #fff;
-  width: 20px;
-  height: 20px;
-  border-radius: 100%;
-  text-align: center;
-  line-height: 20px;
-  font-weight: bold;
-  font-family: "Dosis", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+.content div.tip:before {
+    content: "!";
+    background-color: #af9d6f;
 }
-.content p.tip:before {
-  /* content: "!"; */
-/*   content: "&#10042;"; */
-  content: "\273A";
-  background-color: #af9d6f;
+.content div.tip:before, .content p.success:before {
+    position: absolute;
+    top: 14px;
+    left: -12px;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 20px;
+    font-weight: bold;
+    font-family: "Dosis", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
 }
-.content p.tip:before, .content p.success:before {
-  position: absolute;
-  top: 14px;
-  left: -12px;
-  color: #fff;
-  width: 20px;
-  height: 20px;
-  border-radius: 100%;
-  text-align: center;
-  line-height: 20px;
-  font-weight: bold;
-  font-family: "Dosis", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+.content div.tip:before {
+    content: "\273A";
+    background-color: #af9d6f;
+}
+.content div.tip:before, .content p.success:before {
+    position: absolute;
+    top: 14px;
+    left: -12px;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 20px;
+    font-weight: bold;
+    font-family: "Dosis", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
 }
 
 @media only screen and (min-width: 540px) and (max-width: 964px) {
