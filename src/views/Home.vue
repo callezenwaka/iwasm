@@ -138,8 +138,9 @@ export default {
     /* line-height: 2; */
 }
 .details .text {
-    border-bottom: 0.1rem solid #d9d1bd;
-    font-family: fantasy;
+    /* border-bottom: 0.1rem solid #d9d1bd; */
+    /* font-family: fantasy; */
+    font-style: italic;
 }
 .work {
     background-color: inherit;
