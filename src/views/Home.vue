@@ -103,6 +103,7 @@ export default {
 }
 .home {
     background-color: #f8f4e8;
+    padding: .1rem;
 }
 .profile {
     display: grid;

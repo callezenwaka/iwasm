@@ -92,7 +92,7 @@
 		<!-- CONTACT -->
 		<section class="contact__info">
 			<div class="info">
-				<div class="content">
+				<div class="address">
 					<h2 class="heading">Contact Address</h2>
 					<ul class="list-unstyled">
 						<li><span><i>Organization: </i></span><a  href="https://www.algoboard.com/">Algoboard</a></li>
@@ -265,6 +265,10 @@ export default {
 .social__icon_dark_theme {
 	fill:#15202b;
 }
+/* Address */
+.address {
+	margin-left: 4rem;
+}
 /* form */
 .form {
 	width: 100%;
@@ -360,7 +364,7 @@ textarea {
 .info {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-evenly;
+	justify-content: space-between;
 	/* padding: 2rem; */
 }
 /* form */
@@ -373,14 +377,10 @@ textarea {
 .contact {
     padding: 4rem 20rem;
 }
-.contact__info {
-
-    padding: 4rem 20rem;
-}
 .info {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-evenly;
+	justify-content: space-between;
 	/* padding: 2rem; */
 }
 }
