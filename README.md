@@ -1,34 +1,17 @@
-# callisezenwaka
+### Hi, I'm Callis 👋🏾
 
-## Project setup
-```
-npm install
-```
+### Glad that you came around. I am a fullstack software engineer.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### My personal projects are centered around giving back to the community.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+### You can check them out below:
 
-### Run your tests
-```
-npm run test
-```
+### <a href="https://www.algoboard.com">Algoboard</a>
 
-### Lints and fixes files
-```
-npm run lint
-```
+### An EdTech platform that supported schools during the COVID-19 lockdown. I am currently pivoting the platform.
 
-### Run your unit tests
-```
-npm run test:unit
-```
+### <a href="https://www.algoforms.com">Algoforms</a>
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### An low code platform for organization that collect data in remote regions. It is an offline first application with background sync embedded.
+
+### Want to learn more about me? Check out my <a href="https://www.callisezenwaka.com">Website</a>.
