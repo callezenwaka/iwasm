@@ -1,6 +1,8 @@
 ### Hi, I'm Callis 👋🏾
 
-### Glad that you came around. I am a fullstack software engineer.
+### Glad that you came around. I am a fullstack software engineer 👨🏿‍💻 turned Program Manager, I still write codes anyway.
+
+### I also research on Privacy for Emerging Technology and Enterprise Cloud Applications.
 
 ### My personal projects are centered around giving back to the community.
 
