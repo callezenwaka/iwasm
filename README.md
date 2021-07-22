@@ -12,4 +12,4 @@ You can check them out below:
 
 <a href="https://www.algoforms.com">Algoforms</a> - An low code platform for organization that collect data in remote regions. It is an offline first application with background sync embedded.
 
-Want to learn more about me? Check out my <a href="https://www.callisezenwaka.com">Website</a>.
+Want to learn more about me? Check out my website <a href="https://www.callisezenwaka.com">callisezenwaka.com</a>.
