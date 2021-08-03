@@ -4,6 +4,8 @@ Glad that you came around. I am a fullstack software engineer 👨🏿‍💻 tu
 
 I also research on Privacy for Emerging Technology and Enterprise Cloud Applications.
 
+My <a href="https://codepen.io/callezenwaka">Codepen</a> page has awesome demos.
+
 My personal projects are centered around giving back to the community.
 
 You can check them out below:
